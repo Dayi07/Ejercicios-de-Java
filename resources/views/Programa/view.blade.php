@@ -6,6 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Ver programas</title>
 </head>
+
+    <nav>
+        <ul>
+            <li><a href="{{ route('ViewInsert') }}"> Insertar Programa de Formacion </a></li>
+            <li><a href="{{ route('ViewPro') }}">Ver Progrmamas de Formacion</a></li>
+
+        </ul>
+    </nav>
+
 <body>
     <table border>
         <tr>
@@ -16,15 +25,18 @@
             <td>Acciones</td>
         </tr>
         <tr>
-            <td> </td> 
-            <td> </td> 
-            <td> </td>
-            <td> </td>
+            @foreach ($objeto as $programa)       
+            <td>{{ $programa->NombrePrograma }} </td> 
+            <td>{{ $programa->Tipo_Programa }} </td> 
+            <td>{{ $programa->DuracionMeses }} </td>
+            <td>{{ $programa->LineaPrograma }} </td>
             <td>
-                <a href="{{ route('DeletePro', $programa) }}"><i>E</i></a>
-                <a href="{{ route('UpdatePro', $programa) }}"><i></i></a>
+                <a href=" {{ route('DeletePro', $programa) }} "><i>E</i></a>
+                <a href=" {{ route('ViewUpdate', $programa) }}"><i>A</i></a>
             </td>
-        </tr>
+           
+        </tr> 
+        @endforeach
     </table>
 </body>
 </html>

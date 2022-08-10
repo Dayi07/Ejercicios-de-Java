@@ -17,14 +17,15 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Programa/insert', function () {
-    return view('Programa/insert');
-});
 
-Route::get('Programa/view', 'ProgramaController@ViwePro')->name('InsertView');
+Route::get('Programa/inser', 'ProgramaController@ViewInsert')->name('ViewInsert');
 
-Route::post('Programa/insert', 'ProgramaController@InsertPro')->name('InsertPro');
+Route::get('Programa/view', 'ProgramaController@ViewPro')->name('ViewPro');
 
-Route::post('Programa/delete/{id}', 'ProgramaController@DeletePro')->name('DeletePro');
+Route::post('Programa/inser', 'ProgramaController@InsertPro')->name('InsertPro');
 
-Route::get('Programa/update/{id}', 'ProgramaController@DatosUpdate')->name('DatosUpdate');
+Route::get('Programa/delete/{id}', 'ProgramaController@DeletePro')->name('DeletePro');
+
+Route::get('Programa/update/{id}', 'ProgramaController@DatosUpdate')->name('ViewUpdate');
+
+Route::post('Programa/update', 'ProgramaController@UpdateBD')->name('UpdateBdPrograma');
