@@ -23,7 +23,7 @@
         <input type="text" name="NombrePrograma" id="NombrePrograma"><br><br>
 
         <label for="">Tipo de programa</label>
-        <input type="text" name="Tipo_Programa" id="Tipo_Programa"><br><br>
+        <input type="text" name="TipoPrograma" id="TipoPrograma"><br><br>
 
         <label for="">Duracion de meses</label>
         <input type="number" name="DuracionMeses" id="DuracionMeses"><br><br>

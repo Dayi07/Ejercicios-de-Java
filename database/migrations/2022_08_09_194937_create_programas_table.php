@@ -16,7 +16,7 @@ class CreateProgramasTable extends Migration
         Schema::create('programas', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('NombrePrograma');
-            $table->string('Tipo_programa');
+            $table->string('TipoPrograma');
             $table->string('DuracionMeses');
             $table->string('LineaPrograma');
             $table->timestamps();

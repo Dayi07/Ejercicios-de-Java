@@ -27,16 +27,17 @@
         <tr>
             @foreach ($objeto as $programa)       
             <td>{{ $programa->NombrePrograma }} </td> 
-            <td>{{ $programa->Tipo_Programa }} </td> 
+            <td>{{ $programa->TipoPrograma }} </td>  
             <td>{{ $programa->DuracionMeses }} </td>
             <td>{{ $programa->LineaPrograma }} </td>
             <td>
-                <a href=" {{ route('DeletePro', $programa) }} "><i>E</i></a>
-                <a href=" {{ route('ViewUpdate', $programa) }}"><i>A</i></a>
+                <a href=" {{ route('DeletePro', $programa) }} "><i>ELIMINAR</i></a><br>
+                <a href=" {{ route('ViewUpdate', $programa) }}"><i>ACTUALIZAR</i></a>
             </td>
            
         </tr> 
         @endforeach
     </table>
+
 </body>
 </html>

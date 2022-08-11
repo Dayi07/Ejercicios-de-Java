@@ -17,10 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('Programa/view', 'ProgramaController@ViewPro')->name('ViewPro');
 
 Route::get('Programa/inser', 'ProgramaController@ViewInsert')->name('ViewInsert');
-
-Route::get('Programa/view', 'ProgramaController@ViewPro')->name('ViewPro');
 
 Route::post('Programa/inser', 'ProgramaController@InsertPro')->name('InsertPro');
 
@@ -28,4 +27,4 @@ Route::get('Programa/delete/{id}', 'ProgramaController@DeletePro')->name('Delete
 
 Route::get('Programa/update/{id}', 'ProgramaController@DatosUpdate')->name('ViewUpdate');
 
-Route::post('Programa/update', 'ProgramaController@UpdateBD')->name('UpdateBdPrograma');
+Route::post('Programa/update/', 'ProgramaController@UpdateBD')->name('UpdateBdPrograma');

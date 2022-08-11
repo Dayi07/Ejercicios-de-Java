@@ -16,7 +16,7 @@ class ProgramaController extends Controller
     {
         $instanciaprograma = new App\Programa();
         $instanciaprograma->NombrePrograma = $programa->NombrePrograma;
-        $instanciaprograma->Tipo_Programa = $programa->Tipo_Programa;
+        $instanciaprograma->TipoPrograma = $programa->TipoPrograma;
         $instanciaprograma->DuracionMeses = $programa->DuracionMeses;
         $instanciaprograma->LineaPrograma = $programa->LineaPrograma;
         $instanciaprograma->save();
@@ -44,14 +44,14 @@ class ProgramaController extends Controller
         return view('Programa/update', compact('objeto'));
     }
 
-    public function UpdateBD( Request $programa )
+    public function UpdateBD(Request $programa)
     {
         $programanew = App\Programa::FindOrFail($programa->id);
         $programanew->NombrePrograma= $programa->NombrePrograma;
-        $programanew->Tipo_Programa = $programa->Tipo_Programa;
+        $programanew->TipoPrograma = $programa->TipoPrograma;
         $programanew->DuracionMeses = $programa->DuracionMeses;
         $programanew->LineaPrograma = $programa->LineaPrograma;
-        $programanew->save();
+        $programanew->update();
 
         return redirect('Programa/view');
 

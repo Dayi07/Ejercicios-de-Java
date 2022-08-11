@@ -16,13 +16,16 @@
 </nav>
 
 <body>
-    <form action="{{ route('UpdateBdPrograma') }}" method="POST">
+    <form action="{{ route('UpdateBdPrograma'), $objeto->id }}" method="POST">
         @csrf
+
+        <input type="hidden" value="{{ $objeto->id}}" name="id" id="id">
+
         <label for="">Nombre del programa</label>
         <input type="text" value="{{ $objeto->NombrePrograma}}" name="NombrePrograma" id="NombrePrograma"><br><br>
 
         <label for="">Tipo de programa</label>
-        <input type="text" value="{{ $objeto->Tipo_Programa}}" name="Tipo_Programa" id="Tipo_Programa"><br><br>
+        <input type="text" value="{{ $objeto->TipoPrograma}}" name="TipoPrograma" id="TipoPrograma"><br><br>
 
         <label for="">Duracion de meses</label>
         <input type="number" value="{{ $objeto->DuracionMeses}}" name="DuracionMeses" id="DuracionMeses"><br><br>
@@ -32,7 +35,7 @@
             <option value="{{ $objeto->LineaPrograma }}">{{ $objeto->LineaPrograma }}</option>
             <option value="Linea Quimica">Linea Quimica</option>
             <option value="Linea Tics">Linea Tics</option>
-        </select>
+        </select> 
 
         <button type="submit">Enviar</button>  
     </form>
