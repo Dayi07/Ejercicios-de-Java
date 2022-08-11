@@ -23,7 +23,7 @@ class ProgramaController extends Controller
 
         return redirect('Programa/view');
     }
-
+ 
     public function ViewPro()
     {
         $objeto = App\Programa::all();
